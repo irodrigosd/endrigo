@@ -30,13 +30,23 @@ h2{font-family:Cinzel,serif;font-size:34px;font-weight:500;margin:0 0 18px}
 .quote{border-left:2px solid var(--gold);padding-left:28px;font-family:Cinzel,serif;font-size:25px;line-height:1.5;color:#eee}
 footer{padding:35px 7%;border-top:1px solid #29251e;color:#8e8982;font-size:12px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:760px){nav a{display:none}.hero{min-height:600px;padding-top:70px}.cards,.about{grid-template-columns:1fr}section{padding:60px 7%}}
-
 .hero{gap:60px}
 .hero-copy{flex:1;min-width:0}
 .hero-photo{width:min(430px,42vw);position:relative}
 .hero-photo:before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold);z-index:0}
 .hero-photo img{position:relative;z-index:1;width:100%;height:570px;object-fit:cover;object-position:center;border:1px solid #3b3427;display:block}
 @media(max-width:760px){.hero{display:block}.hero-photo{width:100%;margin-top:50px}.hero-photo img{height:480px}.hero-photo:before{inset:12px -10px -10px 10px}}
+.form-wrap{margin-top:38px;max-width:760px;background:var(--soft);border:1px solid #29251e;padding:30px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-field{display:flex;flex-direction:column;gap:8px}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-size:12px;color:var(--gold2);letter-spacing:.4px}
+.form-field input,.form-field textarea,.form-field select{width:100%;background:#0b0b0b;border:1px solid #3a342a;color:var(--text);padding:14px 13px;font:inherit;border-radius:0;outline:none}
+.form-field textarea{min-height:130px;resize:vertical}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--gold)}
+.form-note{color:#918b83;font-size:12px;line-height:1.6;margin:14px 0 0}
+.form-submit{margin-top:18px;border:0;cursor:pointer}
+@media(max-width:760px){.form-grid{grid-template-columns:1fr}.form-field.full{grid-column:auto}.form-wrap{padding:22px}}
 </style>
 </head>
 <body>
@@ -44,14 +54,13 @@ footer{padding:35px 7%;border-top:1px solid #29251e;color:#8e8982;font-size:12px
   <div class="logo">ENDRIGO F. T. COTRIM</div>
   <div><a href="#atuacao">Atuação</a><a href="#escritorio">Escritório</a><a href="#contato">Contato</a></div>
 </nav>
-
 <header class="hero">
   <div class="hero-copy">
     <div class="eyebrow">Advocacia • OAB/BA 50.661</div>
     <h1>Seus direitos merecem <span class="gold">atenção técnica</span> e humana.</h1>
     <p class="lead">Atendimento presencial e online, com orientação jurídica clara, estratégica e responsável. Um escritório próximo de você e preparado para atender demandas em todo o Brasil.</p>
     <div class="buttons">
-      <a class="btn primary" href="#contato">AGENDAR ATENDIMENTO</a>
+      <a class="btn primary" href="https://wa.me/5577991540440?text=Ol%C3%A1%20Endrigo%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">AGENDAR PELO WHATSAPP</a>
       <a class="btn" href="#atuacao">CONHECER ATUAÇÃO</a>
     </div>
   </div>
@@ -59,7 +68,6 @@ footer{padding:35px 7%;border-top:1px solid #29251e;color:#8e8982;font-size:12px
     <img id="hero-img" src="about:blank" alt="Endrigo Frederich Torres Cotrim em seu escritório">
   </div>
 </header>
-
 <section id="atuacao">
   <h2>Áreas de atuação</h2>
   <p class="sub">Atuação jurídica com linguagem acessível, análise individualizada e compromisso com a ética profissional.</p>
@@ -69,25 +77,39 @@ footer{padding:35px 7%;border-top:1px solid #29251e;color:#8e8982;font-size:12px
     <article class="card"><h3>Outras áreas</h3><p>Atendimento jurídico personalizado conforme a necessidade apresentada, com encaminhamento responsável da demanda.</p></article>
   </div>
 </section>
-
 <section id="escritorio">
   <div class="about">
     <div><h2>Moderno na comunicação. Sério na atuação.</h2><p class="sub">O escritório busca aproximar o Direito das pessoas: explicar com clareza, ouvir com atenção e trabalhar cada demanda com técnica e responsabilidade.</p></div>
     <div class="quote">“Informação jurídica de qualidade começa com uma conversa clara e uma análise cuidadosa.”</div>
   </div>
 </section>
-
 <section id="contato">
   <h2>Vamos conversar sobre o seu caso?</h2>
   <p class="sub">O primeiro passo é entender a situação. Agende um atendimento presencial ou online.</p>
-  <div class="buttons"><a class="btn primary" href="https://wa.me/" target="_blank" rel="noopener">FALAR NO WHATSAPP</a><a class="btn" href="#contato">AGENDAR ATENDIMENTO</a></div>
+  <div class="buttons"><a class="btn primary" href="https://wa.me/5577991540440?text=Ol%C3%A1%20Endrigo%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener">FALAR NO WHATSAPP</a><a class="btn" href="#inscricao">PREENCHER FORMULÁRIO</a></div>
 </section>
-
+<section id="inscricao">
+  <h2>Solicite seu atendimento</h2>
+  <p class="sub">Preencha seus dados e explique brevemente o que precisa. O escritório receberá sua solicitação por e-mail.</p>
+  <form class="form-wrap" action="https://formsubmit.co/endrigoftc@hotmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Nova solicitação de atendimento pelo site">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <div class="form-grid">
+      <div class="form-field"><label for="nome">Nome completo</label><input id="nome" name="Nome" type="text" required></div>
+      <div class="form-field"><label for="telefone">WhatsApp / telefone</label><input id="telefone" name="Telefone" type="tel" inputmode="tel" required></div>
+      <div class="form-field"><label for="email">E-mail</label><input id="email" name="Email" type="email" required></div>
+      <div class="form-field"><label for="atendimento">Tipo de atendimento</label><select id="atendimento" name="Atendimento"><option>Online</option><option>Presencial</option><option>A definir</option></select></div>
+      <div class="form-field full"><label for="mensagem">Conte brevemente sobre o seu caso</label><textarea id="mensagem" name="Mensagem" required></textarea></div>
+    </div>
+    <button class="btn primary form-submit" type="submit">ENVIAR SOLICITAÇÃO</button>
+    <p class="form-note">Ao enviar, você autoriza o uso desses dados exclusivamente para retorno sobre o atendimento solicitado.</p>
+  </form>
+</section>
 <footer>
   <span>Endrigo Frederich Torres Cotrim — Advogado — OAB/BA 50.661</span>
   <span>Guanambi/BA • Atendimento presencial e online</span>
 </footer>
-
 <script>
 (async()=>{
   const files=['img0.txt','img1.txt','img2.txt','img3.txt'];
